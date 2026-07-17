@@ -1191,8 +1191,26 @@ summary {
   text-transform: uppercase;
 }
 
+.contact-actions {
+  display: grid;
+  gap: 12px;
+}
+
 .contact-card .button {
   width: 100%;
+}
+
+.button-secondary {
+  border: 1px solid var(--cobalt);
+  background: var(--white);
+  box-shadow: none;
+  color: var(--cobalt);
+}
+
+.button-secondary:hover {
+  background: #edf4ff;
+  box-shadow: 0 10px 24px rgba(22, 93, 255, 0.12);
+  transform: translateY(-2px);
 }
 
 .site-footer {

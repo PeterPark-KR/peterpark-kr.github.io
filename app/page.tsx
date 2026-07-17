@@ -332,14 +332,32 @@ export default function Home() {
             <span><small>Based in</small>Toronto, Ontario</span>
             <span><small>Languages</small>English + Korean</span>
           </div>
-          <a
-            className="button button-primary"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View résumé <span aria-hidden="true">↗</span>
-          </a>
+          <div style={{ display: "grid", gap: "12px" }}>
+            <a
+              className="button button-primary"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View résumé <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              className="button"
+              href="https://www.linkedin.com/in/hyeonjun-park-a50296322/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Hyeonjun Park's LinkedIn profile"
+              style={{
+                border: "1px solid var(--cobalt)",
+                background: "var(--white)",
+                boxShadow: "none",
+                color: "var(--cobalt)",
+              }}
+            >
+              LinkedIn profile <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>      </section>
 
       <footer className="site-footer">
