@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://peterpark-kr.github.io/sitemap.xml
+Sitemap: https://hyeonjunpark.com/sitemap.xml
