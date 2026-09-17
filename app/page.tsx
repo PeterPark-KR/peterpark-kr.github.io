@@ -2,19 +2,19 @@ const journeySteps = [
   {
     label: "Now",
     title: "BCom Accounting",
-    detail: "York University · Core knowledge · Growth",
+    detail: "York University · Co-op stream",
     timing: "Current",
   },
   {
     label: "Next",
     title: "Practical experience",
-    detail: "Accounting · Finance · Business impact",
-    timing: "In progress",
+    detail: "Accounting and tax co-op",
+    timing: "Next step",
   },
   {
     label: "Goal",
     title: "CPA designation",
-    detail: "Competency · Trust · Professional impact",
+    detail: "Intend to pursue after graduation",
     timing: "Future",
   },
 ];
@@ -23,67 +23,67 @@ const milestones = [
   {
     period: "2022—2024",
     title: "Republic of Korea Navy",
-    subtitle: "Military Linguist & Operations Specialist",
-    copy: "Coordinated information under pressure, maintained precise documentation, and learned to communicate clearly across teams.",
+    subtitle: "Interpretation & operational briefing support",
+    copy: "Maintained Situation Reports and helped prepare briefing materials for duty-officer review during naval operations.",
   },
   {
-    period: "2024",
-    title: "A new chapter in Toronto",
-    subtitle: "International student · New environment",
-    copy: "Moved to Canada and continued my accounting education at York University, building confidence in a new academic and professional environment.",
+    period: "2025",
+    title: "Customer service in Toronto",
+    subtitle: "Paris Baguette · Opening team",
+    copy: "Processed payments and helped Korean-speaking customers understand products, drawing on both languages in everyday service.",
   },
   {
     period: "Today",
     title: "BCom Accounting at York",
-    subtitle: "Fourth year · Building depth",
-    copy: "Deepening my foundation through accounting, finance, business law, strategy, and hands-on Excel work.",
+    subtitle: "Co-op stream · Tax coursework",
+    copy: "Earned an A in Canadian Income Taxation (ADMS 3520) and Advanced Spreadsheets (ADMS 3370).",
   },
   {
     period: "Next",
-    title: "Practical experience → CPA",
-    subtitle: "From knowledge to contribution",
-    copy: "Seeking opportunities where careful analysis, sound judgment, and service can create real business value.",
+    title: "An accounting career with a tax focus",
+    subtitle: "My next step",
+    copy: "I want to apply my studies in an accounting or tax team and intend to pursue the Canadian CPA designation after graduation.",
   },
 ];
 
 const careerPillars = [
   {
     number: "01",
-    title: "Pressure into precision",
-    copy: "My Navy experience taught me to stay composed, protect the quality of information, and follow through when the stakes are real.",
+    title: "Checking the daily numbers",
+    copy: "At my family’s deli, I reconciled the till against prior-day cash and store records to identify discrepancies and recording omissions.",
   },
   {
     number: "02",
-    title: "Complexity into clarity",
-    copy: "Working in both Korean and English helps me bridge perspectives and communicate technical information with greater care.",
+    title: "Making information clear",
+    copy: "In the Navy, I interpreted between Korean and English during vessel repairs with U.S. engineers, helping people with different expertise communicate.",
   },
   {
     number: "03",
-    title: "Learning into impact",
-    copy: "I approach accounting as more than reporting: it is a way to understand decisions, improve processes, and build trust.",
+    title: "Building practical Excel skills",
+    copy: "I applied spreadsheet skills in coursework, quizzes and exams. My Excel toolkit includes PivotTables, data cleaning and scenario analysis.",
   },
 ];
 
 const skillGroups = [
   {
-    code: "ACCT",
+    code: "Coursework",
     title: "Accounting foundation",
-    skills: ["Financial accounting", "Managerial accounting", "Cost analysis", "Business law"],
+    skills: ["BCom Accounting", "Canadian Income Taxation · A", "ADMS 3520 · York University"],
   },
   {
-    code: "DATA",
+    code: "Tools",
     title: "Analysis & tools",
     skills: ["Microsoft Excel", "Pivot tables", "Data cleaning", "Scenario analysis"],
   },
   {
-    code: "BIZ",
-    title: "Business perspective",
-    skills: ["Corporate finance", "Business strategy", "Performance analysis", "Research"],
+    code: "Practice",
+    title: "Business operations",
+    skills: ["Daily till reconciliation", "POS transactions", "Inventory coordination"],
   },
   {
-    code: "COMM",
+    code: "People",
     title: "Communication",
-    skills: ["English", "Korean", "Written reporting", "Cross-team coordination"],
+    skills: ["Korean-English interpretation", "Operational briefing support", "Customer service"],
   },
 ];
 
@@ -129,14 +129,15 @@ export default function Home() {
 
           <div className="hero-content">
             <p className="eyebrow">York University <span>•</span> BCom Accounting <span>•</span> Toronto</p>
-            <h1 id="hero-title">Building my path to the CPA—and a career that moves people forward.</h1>
+            <h1 id="hero-title">Understanding the numbers. Working with people.</h1>
             <p className="hero-intro">
-              I’m Hyeonjun, a fourth-year Accounting student documenting the lessons,
-              projects, and milestones shaping my journey into accounting and finance.
+              I’m Hyeonjun Park—also Peter—a BCom Accounting co-op student at York University.
+              I chose accounting to understand how cash moves through a business.
+              Now I’m building toward a career in tax and the Canadian CPA designation.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#journey">
-                Explore my journey <span aria-hidden="true">↗</span>
+              <a className="button button-primary" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                View my résumé <span aria-hidden="true">↗</span>
               </a>
               <a className="text-link" href="#contact">Connect with me</a>
             </div>
@@ -147,9 +148,9 @@ export default function Home() {
           <div className="lab-heading">
             <div>
               <p>CPA journey</p>
-              <span>Progress dashboard</span>
+              <span>Where I am headed</span>
             </div>
-            <span className="lab-index">04</span>
+            <span className="lab-index" aria-hidden="true">HP</span>
           </div>
 
           <div className="progress-panel">
@@ -170,9 +171,9 @@ export default function Home() {
           <aside className="focus-panel" aria-label="Current focus areas">
             <h2>Current focus</h2>
             <ul>
-              <li><span>01</span> CPA pathway</li>
+              <li><span>01</span> Tax coursework</li>
               <li><span>02</span> Applied experience</li>
-              <li><span>03</span> Accounting + finance</li>
+              <li><span>03</span> Canadian CPA goal</li>
             </ul>
           </aside>
 
@@ -186,7 +187,7 @@ export default function Home() {
       <section className="proof-strip" aria-label="Professional highlights">
         <article>
           <span className="proof-index">01</span>
-          <div><small>Professional direction</small><strong>Aspiring CPA</strong></div>
+          <div><small>Academic foundation</small><strong>York Accounting · Co-op</strong></div>
           <span className="proof-plus" aria-hidden="true">+</span>
         </article>
         <article>
@@ -209,20 +210,19 @@ export default function Home() {
       <section className="journey-section content-section" id="journey" aria-labelledby="journey-title">
         <div className="section-heading">
           <p>01 / The journey</p>
-          <h2 id="journey-title">A foundation built on discipline, curiosity, and forward motion.</h2>
+          <h2 id="journey-title">Why accounting. Why tax.</h2>
           <p className="section-lead">
-            My path has crossed countries, disciplines, and high-pressure environments.
-            Each chapter has strengthened the same habits: learn carefully, communicate clearly,
-            and keep moving toward work that matters.
+            Working with cash and store records made business feel concrete to me.
+            Accounting gives me a way to understand those movements; tax is the area
+            I want to explore more deeply through study and practical experience.
           </p>
         </div>
 
         <div className="journey-layout">
           <aside className="chapter-card">
-            <span className="chapter-label">Current chapter</span>
-            <strong>04</strong>
-            <h3>Student → Professional</h3>
-            <p>Fourth-year BCom Accounting student at York University, preparing for the transition from classroom knowledge to practical experience.</p>
+            <span className="chapter-label">My approach</span>
+            <h3>Be careful with the details. Be clear with people.</h3>
+            <p>Whether I’m checking a record or explaining information in another language, I value patience, consistency and following through.</p>
             <div className="chapter-meta">
               <span>Toronto, Canada</span>
               <span>CPA direction</span>
@@ -248,10 +248,10 @@ export default function Home() {
       <section className="experience-section" id="experience" aria-labelledby="experience-title">
         <div className="experience-heading">
           <p>02 / Experience</p>
-          <h2 id="experience-title">Experience beyond the balance sheet.</h2>
+          <h2 id="experience-title">What I bring to a team.</h2>
           <span>
-            The strongest part of my foundation was built before any spreadsheet: in environments
-            that required reliability, adaptability, and respect for the people depending on my work.
+            My experience comes from a family business, customer service and naval operations.
+            Each has given me practical habits to bring into an accounting workplace.
           </span>
         </div>
 
@@ -266,21 +266,16 @@ export default function Home() {
           ))}
         </div>
 
-        <blockquote>
-          <span aria-hidden="true">“</span>
-          <p>I want to become the kind of professional people can trust with both the numbers and the decisions behind them.</p>
-        </blockquote>
       </section>
 
       <section className="skills-section content-section" id="skills" aria-labelledby="skills-title">
         <div className="skills-heading-row">
           <div className="section-heading compact">
             <p>03 / Skills</p>
-            <h2 id="skills-title">A toolkit built for modern accounting.</h2>
+            <h2 id="skills-title">A foundation I can build on.</h2>
           </div>
           <p className="skills-intro">
-            Technical foundations, practical tools, and a business mindset—developed through coursework,
-            self-directed learning, and real operating experience.
+            Academic preparation and transferable skills, with room to keep learning.
           </p>
         </div>
 
@@ -299,17 +294,6 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="current-track" aria-label="Current development priorities">
-          <div>
-            <p>Current development track</p>
-            <h3>From strong fundamentals to practical contribution.</h3>
-          </div>
-          <ol>
-            <li><span>01</span> Complete BCom</li>
-            <li><span>02</span> Gain applied experience</li>
-            <li><span>03</span> Progress toward CPA</li>
-          </ol>
-        </div>
       </section>
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title">
@@ -318,21 +302,21 @@ export default function Home() {
         </div>
         <div className="contact-copy">
           <p>04 / Connect</p>
-          <h2 id="contact-title">Let’s build the next chapter.</h2>
+          <h2 id="contact-title">Let’s talk accounting and tax.</h2>
           <span>
-            I’m open to conversations about accounting and finance opportunities—especially internal audit,
-            advisory, banking, and analytical roles where trust and judgment matter.
+            I’d welcome a conversation about accounting and tax co-op opportunities,
+            your team’s work, or the lessons that shaped your own CPA path.
           </span>
         </div>
         <div className="contact-card">
           <div className="availability-dot"><i></i> Open to conversations</div>
-          <h3>Students, mentors, and professionals are always welcome.</h3>
-          <p>Connect through the professional profile or résumé where you found this page. I’d be glad to exchange perspectives and learn from your experience.</p>
+          <h3>Meet Peter.</h3>
+          <p>My résumé has the details of my education and experience. You can reach me on LinkedIn—I’d be glad to connect.</p>
           <div className="contact-meta">
             <span><small>Based in</small>Toronto, Ontario</span>
             <span><small>Languages</small>English + Korean</span>
           </div>
-          <div style={{ display: "grid", gap: "12px" }}>
+          <div className="contact-actions">
             <a
               className="button button-primary"
               href="/resume.pdf"
@@ -343,30 +327,25 @@ export default function Home() {
             </a>
 
             <a
-              className="button"
+              className="button button-secondary"
               href="https://www.linkedin.com/in/hyeonjun-park-a50296322/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Hyeonjun Park's LinkedIn profile"
-              style={{
-                border: "1px solid var(--cobalt)",
-                background: "var(--white)",
-                boxShadow: "none",
-                color: "var(--cobalt)",
-              }}
             >
               LinkedIn profile <span aria-hidden="true">↗</span>
             </a>
           </div>
-        </div>      </section>
+        </div>
+      </section>
 
       <footer className="site-footer">
         <a className="brand footer-brand" href="#top" aria-label="Hyeonjun Park, back to top">
           <span className="brand-mark" aria-hidden="true">HP</span>
           <span>Hyeonjun Park</span>
         </a>
-        <p>Aspiring CPA · Accounting + Finance · Toronto</p>
-        <small>Building the journey, one milestone at a time.</small>
+        <p>Accounting · Tax direction · Toronto</p>
+        <small>Hyeonjun Park · Peter</small>
       </footer>
     </main>
   );

@@ -710,7 +710,7 @@ summary {
 .chapter-card h3 {
   position: relative;
   z-index: 1;
-  margin: 0 0 14px;
+  margin: 40px 0 20px;
   font-size: 28px;
   letter-spacing: -0.04em;
 }
@@ -1407,12 +1407,13 @@ summary {
   .hero-copy {
     min-height: auto;
     place-items: start;
-    padding: 76px 24px 70px;
+    padding: 48px 24px;
   }
 
   .hero h1 {
     margin-top: 19px;
-    font-size: clamp(43px, 12vw, 62px);
+    font-size: clamp(38px, 10vw, 56px);
+    line-height: 1.06;
   }
 
   .hero-actions {
@@ -1426,14 +1427,35 @@ summary {
   }
 
   .journey-lab {
-    min-height: 750px;
+    min-height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    padding: 42px 20px 70px;
+    padding: 32px 20px;
+    gap: 24px;
   }
 
   .progress-panel {
-    min-height: 420px;
+    min-height: auto;
+    padding: 12px 20px 12px 56px;
+  }
+
+  .progress-step {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    padding: 18px 0;
+  }
+
+  .progress-step > small { margin-top: 0; }
+  .progress-line { left: 27px; }
+  .progress-node { left: -38px; }
+  .skill-grid h3 { min-height: auto; margin: 28px 0 20px; }
+  .contact-card h3 { margin-top: 28px; }
+  .hero-actions { width: 100%; }
+  .hero-actions .button { width: 100%; }
+  .eyebrow { font-size: 11px; line-height: 1.7; }
+  .section-lead, .skills-intro, .experience-heading > span, .contact-copy > span {
+    font-size: 16px;
+    line-height: 1.65;
   }
 
   .focus-panel {
@@ -1451,13 +1473,13 @@ summary {
   }
 
   .proof-strip article {
-    min-height: 96px;
+    min-height: 80px;
   }
 
   .content-section,
   .experience-section,
   .contact-section {
-    padding: 82px 20px;
+    padding: 56px 20px;
   }
 
   .section-heading,
@@ -1469,7 +1491,7 @@ summary {
   .experience-heading h2,
   .skills-heading-row h2,
   .contact-copy h2 {
-    font-size: clamp(42px, 12vw, 58px);
+    font-size: clamp(32px, 8vw, 44px);
   }
 
   .section-lead,
@@ -1479,12 +1501,12 @@ summary {
 
   .journey-layout {
     grid-template-columns: 1fr;
-    margin-top: 64px;
+    margin-top: 32px;
   }
 
   .chapter-card {
-    min-height: 450px;
-    padding: 28px;
+    min-height: auto;
+    padding: 28px 28px 90px;
   }
 
   .chapter-meta {
@@ -1509,20 +1531,21 @@ summary {
 
   .pillar-grid {
     grid-template-columns: 1fr;
-    margin-top: 58px;
+    margin-top: 32px;
   }
 
   .pillar-grid article {
-    min-height: 320px;
+    min-height: auto;
+    padding: 28px;
   }
 
   .pillar-grid h3 {
-    margin-top: 72px;
+    margin-top: 28px;
   }
 
   .experience-section blockquote {
     grid-template-columns: 1fr;
-    margin-top: 54px;
+    margin-top: 32px;
     padding: 34px 26px;
   }
 
@@ -1532,11 +1555,11 @@ summary {
 
   .skill-grid {
     grid-template-columns: 1fr;
-    margin-top: 54px;
+    margin-top: 32px;
   }
 
   .skill-grid article {
-    min-height: 360px;
+    min-height: auto;
   }
 
   .current-track {
@@ -1545,7 +1568,7 @@ summary {
   }
 
   .contact-section {
-    gap: 52px;
+    gap: 32px;
   }
 
   .contact-card {
