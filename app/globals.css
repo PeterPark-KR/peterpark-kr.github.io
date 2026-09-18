@@ -95,7 +95,7 @@ dd { margin: 0; font-size: 15px; }
 .supporting-copy { font-size: 13px; color: var(--muted); margin-top: 16px; }
 .project-entry h2 { font-size: 25px; }
 .contact-section { margin-top: 48px; padding-block: 36px; border-block: 1px solid var(--line); }
-.contact-layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; }
+.contact-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
 .contact-layout > div { min-width: 0; max-width: 620px; }
 .contact-section .profile-links { margin-top: 12px; }
 .site-footer { display: flex; align-items: center; gap: 24px; padding-block: 22px; font-size: 12px; }

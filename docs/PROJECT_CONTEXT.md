@@ -192,3 +192,8 @@ This entry supersedes the earlier single-language source-map and design notes. T
 
 - User authorized publishing all reviewed follow-ups: clearer homepage links, header-aligned back links, expanded confirmed golf/Kumdo stories, copy corrections, short coursework descriptions, and Contact me here wording in all four languages. This supersedes the local-only notes for these changes.
 - Release scope is app/globals.css, app/profile.tsx, app/translations.ts and this context. Remote main matched local 0df77de. Production build/TypeScript passed on final source; release lint and whitespace checks passed. Existing deployment, domain, resume and verification assets remain unchanged. Deployment/live checks follow the push; browser visual and mobile interaction checks remain unverified.
+
+## Contact visual refinement - 2026-09-18
+
+- User requested a visual-only contact adjustment and publication. Replaced the narrow heading/sidebar grid with a single left-aligned column: heading above the existing 620px reading-width copy and links, with a 16px gap. Removes the awkward desktop heading wrap while retaining mobile spacing, typography, wording and all destinations across languages.
+- Clean initial Git status; release changes limited to app/globals.css and this context. Production build/TypeScript, lint and whitespace checks passed. Remote main matched c7f4ac3. Browser visual interaction checks remain unavailable; deployment and live asset checks follow publication.
