@@ -10,7 +10,7 @@ export type Copy = {
 };
 
 export const en: Copy = {
-  name: "Hyeonjun Park", portfolio: "Accounting portfolio", location: "Toronto, Ontario",
+  name: "Hyeonjun Park", portfolio: "My journey toward becoming a CPA", location: "Toronto, Ontario",
   subtitle: "York University · BCom Accounting",
   statement: "An accounting student interested in how businesses manage cash and how tax shapes their decisions.",
   note: "Co-op stream · Intending to pursue the Canadian CPA designation",
@@ -28,7 +28,7 @@ export const en: Copy = {
   degree: "Bachelor of Commerce, Accounting · Co-op stream", selected: "Selected completed coursework",
   courses: ["An Overview of Canadian Income Taxation", "Advanced Spreadsheets"], grade: "Grade: A", courseworkNote: "Spreadsheet skills were applied in coursework, quizzes and exams.",
   skillsTitle: "Skills & languages",
-  skills: [["Microsoft Excel", "Intermediate proficiency: PivotTables, data cleaning and scenario analysis."], ["Business operations", "Daily till reconciliation, POS transactions and inventory coordination."], ["Communication", "Korean–English interpretation, operational briefing support and customer service."], ["Languages", "Korean and English · Fluent / bilingual"]],
+  skills: [["Microsoft Excel", "Intermediate proficiency: PivotTables, data cleaning and scenario analysis."], ["Cash handling & reconciliation", "I checked cash against store records, processed payments and coordinated stock across locations."], ["Communication", "Korean–English interpretation, operational briefing support and customer service."], ["Languages", "Korean and English · Fluent / bilingual"]],
   projects: [
     { status: "2026 · Ongoing", title: "CPA Journey Portfolio", description: "Built and deployed this website with AI-assisted development tools to share my accounting education, experience and professional development. I continue to maintain its content.", tools: "Next.js · GitHub Pages" },
     { status: "Planned", title: "Small-Business Cash Flow and GST/HST Tracker", description: "A planned learning project using fictional transactions, CRA rules and Canadian industry benchmarks to explore cash flow and GST/HST tracking." },
@@ -38,7 +38,7 @@ export const en: Copy = {
 };
 
 export const ko: Copy = {
-  name: "박현준", portfolio: "회계 포트폴리오", location: "캐나다 온타리오주 토론토",
+  name: "박현준", portfolio: "CPA를 향한 나의 여정", location: "캐나다 온타리오주 토론토",
   subtitle: "York University · BCom 회계 전공", statement: "기업의 현금 관리와 세금이 의사결정에 미치는 영향에 관심을 두고 회계를 공부하고 있습니다.", note: "Co-op 과정 · 캐나다 CPA 자격 취득 목표",
   nav: ["소개", "경험", "학력", "역량", "프로젝트", "연락처"], skip: "본문으로 바로가기", menu: "메뉴", primaryNav: "주요 탐색", mobileNav: "모바일 탐색", language: "웹사이트 언어",
   resume: "이력서 (영문)", linkedin: "LinkedIn", email: "이메일", back: "맨 위로", footer: "회계 및 세무 · 토론토",
@@ -50,7 +50,7 @@ export const ko: Copy = {
     { organization: "가족 운영 한식 델리", role: "매장 관리자", dates: "2022.02 – 2022.08", location: "대한민국 제주시", description: "매일 시재를 전일 현금 및 매장 기록과 대조하여 차이와 기록 누락을 확인했습니다. 다른 지점 관리자들과 재고를 조정하여 품절 예방을 도왔습니다." },
   ],
   degree: "Bachelor of Commerce, 회계 전공 · Co-op 과정", selected: "주요 이수 과목", courses: ["캐나다 소득세 개론 (An Overview of Canadian Income Taxation)", "고급 스프레드시트 (Advanced Spreadsheets)"], grade: "성적: A", courseworkNote: "스프레드시트 역량은 수업 과제, 퀴즈와 시험에서 활용했습니다.", skillsTitle: "역량 및 언어",
-  skills: [["Microsoft Excel", "중급: 피벗 테이블, 데이터 정리 및 시나리오 분석."], ["매장 운영", "일일 시재 대조, POS 거래 및 재고 조정."], ["커뮤니케이션", "한영 통역, 작전 브리핑 지원 및 고객 서비스."], ["구사 언어", "한국어 및 영어 · 유창 / 이중언어"]],
+  skills: [["Microsoft Excel", "중급: 피벗 테이블, 데이터 정리 및 시나리오 분석."], ["현금 관리 및 대조", "현금을 매장 기록과 대조하고 결제를 처리하며 지점 간 재고를 조정했습니다."], ["커뮤니케이션", "한영 통역, 작전 브리핑 지원 및 고객 서비스."], ["구사 언어", "한국어 및 영어 · 유창 / 이중언어"]],
   projects: [
     { status: "2026 · 지속 관리 중", title: "CPA Journey 포트폴리오", description: "회계 교육, 경험과 성장 과정을 소개하기 위해 AI 지원 개발 도구로 이 웹사이트를 제작하고 배포했습니다. 콘텐츠를 지속적으로 관리하고 있습니다.", tools: "Next.js · GitHub Pages" },
     { status: "계획 단계", title: "소규모 사업 현금흐름 및 GST/HST 추적 도구", description: "가상 거래, 캐나다 국세청(CRA) 규정 및 캐나다 산업 벤치마크를 활용하여 현금흐름과 GST/HST 추적을 공부하기 위한 프로젝트를 계획하고 있습니다." },
@@ -59,7 +59,7 @@ export const ko: Copy = {
 };
 
 export const ja: Copy = {
-  name: "Hyeonjun Park", portfolio: "会計ポートフォリオ", location: "カナダ・オンタリオ州トロント",
+  name: "Hyeonjun Park", portfolio: "CPAを目指す私の歩み", location: "カナダ・オンタリオ州トロント",
   subtitle: "York University · BCom 会計専攻", statement: "企業の現金管理と、税が意思決定に与える影響に関心を持ち、会計を学んでいます。", note: "Co-op課程 · カナダのCPA資格取得を目標にしています",
   nav: ["自己紹介", "経験", "学歴", "スキル", "プロジェクト", "連絡先"], skip: "本文へ移動", menu: "メニュー", primaryNav: "メインナビゲーション", mobileNav: "モバイルナビゲーション", language: "サイトの表示言語",
   resume: "履歴書（英語）", linkedin: "LinkedIn", email: "メール", back: "ページ上部へ", footer: "会計・税務 · トロント",
@@ -71,7 +71,7 @@ export const ja: Copy = {
     { organization: "家族経営の韓国料理デリ", role: "店舗マネージャー", dates: "2022.02 – 2022.08", location: "韓国・済州市", description: "毎日、レジの現金を前日の現金残高と店舗記録に照合し、差異や記録漏れを確認しました。他店舗のマネージャーと在庫を調整し、品切れの防止に努めました。" },
   ],
   degree: "Bachelor of Commerce、会計専攻 · Co-op課程", selected: "主な履修済み科目", courses: ["カナダ所得税概論（An Overview of Canadian Income Taxation）", "上級スプレッドシート（Advanced Spreadsheets）"], grade: "成績：A", courseworkNote: "スプレッドシートのスキルは、授業の課題、小テスト、試験で活用しました。", skillsTitle: "スキルと言語",
-  skills: [["Microsoft Excel", "中級：ピボットテーブル、データの整理、シナリオ分析。"], ["店舗運営", "日々の現金照合、POS取引、在庫調整。"], ["コミュニケーション", "韓英通訳、作戦ブリーフィングの支援、接客。"], ["使用言語", "韓国語・英語 · 流暢／バイリンガル"]],
+  skills: [["Microsoft Excel", "中級：ピボットテーブル、データの整理、シナリオ分析。"], ["現金管理・照合", "現金と店舗記録の照合、決済処理、店舗間の在庫調整を行いました。"], ["コミュニケーション", "韓英通訳、作戦ブリーフィングの支援、接客。"], ["使用言語", "韓国語・英語 · 流暢／バイリンガル"]],
   projects: [
     { status: "2026 · 継続更新中", title: "CPA Journey ポートフォリオ", description: "会計の学習、経験、成長の過程を紹介するため、AI支援の開発ツールを用いてこのサイトを制作・公開しました。内容は継続的に更新しています。", tools: "Next.js · GitHub Pages" },
     { status: "計画段階", title: "小規模事業のキャッシュフロー・GST/HST管理ツール", description: "架空の取引、カナダ歳入庁（CRA）の規則、カナダの業界ベンチマークを使い、キャッシュフローとGST/HSTの管理を学ぶためのプロジェクトを計画しています。" },
@@ -80,7 +80,7 @@ export const ja: Copy = {
 };
 
 export const zh: Copy = {
-  name: "Hyeonjun Park", portfolio: "会计个人作品集", location: "加拿大安大略省多伦多",
+  name: "Hyeonjun Park", portfolio: "我迈向CPA的历程", location: "加拿大安大略省多伦多",
   subtitle: "York University · BCom 会计专业", statement: "我是一名会计专业学生，关注企业如何管理现金，以及税收如何影响企业决策。", note: "Co-op 带薪实习项目 · 计划考取加拿大 CPA 资格",
   nav: ["个人简介", "经历", "教育背景", "技能", "项目", "联系"], skip: "跳转至正文", menu: "菜单", primaryNav: "主导航", mobileNav: "移动端导航", language: "网站显示语言",
   resume: "简历（英文）", linkedin: "LinkedIn", email: "电子邮件", back: "返回顶部", footer: "会计与税务 · 多伦多",
@@ -92,7 +92,7 @@ export const zh: Copy = {
     { organization: "家庭经营的韩式熟食店", role: "门店经理", dates: "2022.02 – 2022.08", location: "韩国济州市", description: "每日将收银现金与前一日现金及门店记录进行核对，识别差异和记录遗漏。与其他门店经理协调库存，协助预防缺货。" },
   ],
   degree: "Bachelor of Commerce，会计专业 · Co-op 带薪实习项目", selected: "部分已完成课程", courses: ["加拿大所得税概论（An Overview of Canadian Income Taxation）", "高级电子表格（Advanced Spreadsheets）"], grade: "成绩：A", courseworkNote: "电子表格技能应用于课程作业、测验和考试。", skillsTitle: "技能与语言",
-  skills: [["Microsoft Excel", "中级水平：数据透视表、数据清理和情景分析。"], ["门店运营", "每日现金核对、POS交易和库存协调。"], ["沟通", "韩英口译、作战简报支持和客户服务。"], ["使用语言", "韩语和英语 · 流利／双语"]],
+  skills: [["Microsoft Excel", "中级水平：数据透视表、数据清理和情景分析。"], ["现金管理与核对", "我核对现金与门店记录、处理付款，并协调各门店的库存。"], ["沟通", "韩英口译、作战简报支持和客户服务。"], ["使用语言", "韩语和英语 · 流利／双语"]],
   projects: [
     { status: "2026 · 持续维护", title: "CPA Journey 个人作品集", description: "使用AI辅助开发工具搭建并发布了本网站，用于展示我的会计教育背景、经历和职业成长。我持续维护网站内容。", tools: "Next.js · GitHub Pages" },
     { status: "计划中", title: "小型企业现金流与GST/HST跟踪工具", description: "计划使用虚构交易、加拿大税务局（CRA）规则和加拿大行业基准，开展现金流与GST/HST跟踪的学习项目。" },
@@ -125,7 +125,7 @@ export const narrative: Record<Locale, {
     opening: ["My interest in accounting started with the everyday work at my family’s deli: checking cash, keeping records and coordinating stock. I wanted to understand how those details fit into the wider picture of a business.", "The Navy and customer service put me in different settings, but the work still involved information that someone else needed to use. I’m building on those experiences as an accounting co-op student at York University, with an interest in tax and plans to pursue the Canadian CPA designation."],
     experienceTitle: "How I got here", experienceIntro: "Three different settings, each with responsibilities I could carry into the next.",
     chapters: ["Helping people understand each other", "Preparing information for others to use", "Starting with the day’s numbers"],
-    contributionTitle: "What I’d bring to a team",
+    contributionTitle: "What I’d bring to your team",
     contribution: "I’m looking for a co-op role where I can build on this experience: checking records carefully, working with data in Excel and communicating clearly with colleagues. My tax knowledge comes from coursework so far. I’d bring that foundation, practical experience with cash and records, and a willingness to learn how your team works.",
     aboutSummary: "Checking cash at a family deli, preparing Navy reports and helping people communicate across languages—each role shaped how I work and why I chose accounting.",
     projectsIntro: "My interest in how businesses manage cash also shapes what I want to learn next. This website is an ongoing project; the cash-flow tracker below is still a plan.",
@@ -135,7 +135,7 @@ export const narrative: Record<Locale, {
     opening: ["회계에 대한 관심은 가족이 운영하는 델리의 일상적인 업무에서 시작됐습니다. 현금을 확인하고 기록을 관리하며 재고를 조정하면서, 이런 세부 사항이 사업 전체와 어떻게 연결되는지 이해하고 싶어졌습니다.", "해군과 고객 서비스 업무는 환경이 달랐지만, 다른 사람이 활용할 정보를 다룬다는 공통점이 있었습니다. 지금은 York University의 BCom 회계 전공 Co-op 과정에서 그 경험에 회계 지식을 더하고 있습니다. 특히 세무에 관심이 있으며 캐나다 CPA 자격 취득을 목표로 합니다."],
     experienceTitle: "지금까지의 과정", experienceIntro: "서로 다른 세 환경에서 맡은 책임은 다음 경험의 바탕이 됐습니다.",
     chapters: ["서로 이해할 수 있도록 돕기", "다른 사람이 활용할 정보 준비하기", "매일의 숫자에서 시작하기"],
-    contributionTitle: "팀에 가져갈 경험과 태도",
+    contributionTitle: "여러분의 팀에 기여할 수 있는 점",
     contribution: "기록을 꼼꼼히 확인하고, Excel로 데이터를 다루며, 동료와 명확하게 소통하는 경험을 이어 갈 Co-op 역할을 찾고 있습니다. 세무 지식은 아직 수업에서 배운 단계입니다. 그 기초와 실제 현금·기록 관리 경험을 바탕으로 팀의 일하는 방식을 배우며 기여하고 싶습니다.",
     aboutSummary: "가족 델리의 현금 확인, 해군 보고 자료 준비, 언어가 다른 사람들 사이의 소통을 거치며 지금의 업무 태도와 회계에 대한 관심을 키웠습니다.",
     projectsIntro: "기업의 현금 관리에 대한 관심은 앞으로의 학습 방향으로도 이어집니다. 이 웹사이트는 계속 관리하고 있으며, 아래 현금흐름 추적 도구는 아직 계획 단계입니다.",
@@ -145,7 +145,7 @@ export const narrative: Record<Locale, {
     opening: ["会計への関心は、家族経営のデリでの日々の仕事から始まりました。現金の確認、記録の管理、在庫の調整を通じて、一つひとつの作業が事業全体にどうつながるのかを理解したくなりました。", "海軍と接客では環境が違いましたが、他の人が使う情報を扱うという共通点がありました。今はYork UniversityのBCom会計専攻Co-op課程で、その経験に会計の知識を重ねています。特に税務に関心があり、カナダのCPA資格取得を目指しています。"],
     experienceTitle: "これまでの歩み", experienceIntro: "三つの異なる環境で担った責任が、次の経験につながっています。",
     chapters: ["互いの理解を助ける", "他の人が使う情報を準備する", "日々の数字から始める"],
-    contributionTitle: "チームで生かしたいこと",
+    contributionTitle: "皆さんのチームで生かしたいこと",
     contribution: "記録を丁寧に確認し、Excelでデータを扱い、同僚と明確に意思疎通する経験を生かせるCo-opの機会を探しています。税務の知識は、今のところ授業で学んだものです。その基礎と現金・記録を扱った実務経験を生かし、チームの仕事の進め方を学びながら貢献したいと考えています。",
     aboutSummary: "家族のデリでの現金確認、海軍の報告資料作成、言葉の異なる人同士の意思疎通。その経験が、仕事への姿勢と会計への関心につながっています。",
     projectsIntro: "企業の現金管理への関心は、これから学びたいことにもつながっています。このサイトは継続更新中で、以下のキャッシュフロー管理ツールはまだ計画段階です。",
@@ -155,7 +155,7 @@ export const narrative: Record<Locale, {
     opening: ["我对会计的兴趣始于家人熟食店的日常工作：核对现金、管理记录、协调库存。我想了解这些细节如何与企业的整体经营联系起来。", "海军和客户服务的工作环境不同，但都需要处理其他人要使用的信息。如今，我在York University的BCom会计专业Co-op项目中学习，为这些经历补充会计知识。我尤其对税务感兴趣，并计划考取加拿大CPA资格。"],
     experienceTitle: "我走过的路", experienceIntro: "三个不同的环境，每一段经历中的责任都为下一段打下了基础。",
     chapters: ["帮助彼此理解", "准备供他人使用的信息", "从每天的数字开始"],
-    contributionTitle: "我希望为团队带来什么",
+    contributionTitle: "我希望为你的团队带来什么",
     contribution: "我希望找到能延续这些经验的Co-op实习机会：认真核查记录、用Excel处理数据，并与同事清晰沟通。目前我的税务知识来自课程学习。我希望把这些基础知识与实际管理现金和记录的经验结合起来，学习团队的工作方式并作出贡献。",
     aboutSummary: "在家人的熟食店核对现金、准备海军报告、帮助不同语言的人沟通——这些经历塑造了我的工作方式，也让我选择了会计。",
     projectsIntro: "对企业现金管理的兴趣，也影响着我接下来想学什么。这个网站仍在持续维护，下面的现金流跟踪工具则还处于计划阶段。",
