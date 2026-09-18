@@ -1,10 +1,11 @@
 ﻿import Profile from "../profile";
-import { resolveLocale } from "../locale";
+import { locales, pageNames, pagePath, resolveRoute } from "../locale";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return [{ locale: [] }, { locale: ["ko"] }, { locale: ["ja"] }, { locale: ["zh"] }];
+  return locales.flatMap(locale => pageNames.map(page => ({ locale: pagePath(locale, page).split("/").filter(Boolean) })));
 }
 export default async function Page({ params }: { params: Promise<{ locale?: string[] }> }) {
-  return <Profile locale={resolveLocale((await params).locale)} />;
+  const { locale, page } = resolveRoute((await params).locale);
+  return <Profile locale={locale} page={page} />;
 }

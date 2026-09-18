@@ -1,4 +1,4 @@
-﻿export type Copy = {
+export type Copy = {
   name: string; portfolio: string; location: string; subtitle: string; statement: string; note: string;
   nav: string[]; skip: string; menu: string; primaryNav: string; mobileNav: string; language: string;
   resume: string; linkedin: string; email: string; back: string; footer: string; title: string; description: string;
@@ -109,3 +109,98 @@ export const localeInfo = {
   zh: { code: "ZH", label: "简体中文", lang: "zh-Hans", path: "/zh/", og: "zh_CN" },
 } as const;
 export const sectionIds = ["journey", "experience", "education", "skills", "projects", "contact"];
+
+export type PageCopy = {
+  labels: { home: string; about: string; interests: string; projects: string };
+  hello: string; intro: string[]; explore: string;
+  summaries: { about: string; interests: string; projects: string };
+  descriptions: { about: string; interests: string; projects: string };
+  aboutTitle: string; aboutIntro: string[]; experienceIntro: string;
+  stories: [string[], string[], string[]];
+  interestsTitle: string; interestsIntro: string; kumdo: string[]; golf: string; golfText: string;
+  projectsIntro: string; contact: string; contactTitle: string;
+};
+
+export const pageCopy: Record<Locale, PageCopy> = {
+  en: {
+    labels: { home: "Home", about: "About", interests: "Interests", projects: "Projects" },
+    hello: "Hi, I’m Hyeonjun. You can also call me Peter.",
+    intro: ["I study accounting at York University in Toronto. I’m particularly interested in tax and intend to pursue the Canadian CPA designation.", "Outside accounting, Haedong Kumdo has been part of my life for ten years. I’m also interested in golf."],
+    explore: "A little more about me",
+    summaries: { about: "Why I chose accounting, what I’m studying, and a closer look at my work in a family business, customer service and the Navy.", interests: "Ten years of Haedong Kumdo, an instructor qualification, and an interest in golf.", projects: "This website, which I continue to maintain, and a cash-flow learning project I’m planning." },
+    descriptions: { about: "Hyeonjun Park on studying accounting at York University, developing an interest in tax, and working in a family business, customer service and the Navy.", interests: "Hyeonjun Park’s interests outside accounting: ten years of Haedong Kumdo, a 4th Dan and instructor qualification, and golf.", projects: "Hyeonjun Park’s ongoing portfolio website and planned small-business cash-flow and GST/HST learning project." },
+    aboutTitle: "About me",
+    aboutIntro: ["I chose accounting because I wanted to understand how cash moves through a business. At my family’s deli, cash records and stock levels were part of the day’s work. Studying accounting gives me a way to understand that side of a business more fully.", "I have a particular interest in tax. I’m now studying in the BCom Accounting co-op stream and intend to pursue the Canadian CPA designation. Tax is a direction I want to explore through study and practical experience."],
+    experienceIntro: "A few parts of my background, with more context than fits on a résumé.",
+    stories: [
+      ["I joined the opening team at a new Paris Baguette location in Toronto in 2025. Alongside processing cash and card payments, I helped Korean-speaking customers understand the products.", "Most of my coworkers had limited Korean fluency, so switching between Korean and English was a practical part of helping customers communicate with the team."],
+      ["During my service in the Republic of Korea Navy, I maintained Situation Reports and helped prepare operational briefing materials for duty-officer review. Those records supported reporting through the command chain during naval operations.", "I also interpreted between Korean and English during vessel repairs with U.S. engineers and served as a linguist in Korea–France joint operations. For approximately six months, I was a Barracks Room Leader, helping resolve peer conflicts and coordinate shared duties and resources."],
+      ["At my family’s deli in Jeju-si, I checked the till every day against prior-day cash and store records, looking for discrepancies or missing entries. I also coordinated stock with managers at other locations to help prevent shortages.", "I suggested a seven-day price promotion and set up a Naver Band group to share daily specials. These efforts contributed to approximately 10% higher monthly sales, recorded through the POS system, compared with the previous month."],
+    ],
+    interestsTitle: "Beyond accounting", interestsIntro: "A part of my life that doesn’t need to fit on a résumé.",
+    kumdo: ["I’ve trained in Haedong Kumdo, a Korean sword martial art, for ten years. I hold a 4th Dan and an instructor qualification.", "I’ve competed at Mulimpia twice, with awards including gold in paper cutting. The team demonstrations were another part of the experience: performing together helped bring us closer as a group.", "I’ve also helped lead training sessions and coached during demonstration competitions. When the head instructor was away, I would step in to lead training."],
+    golf: "Golf", golfText: "Golf is another personal interest of mine.",
+    projectsIntro: "A place for what I’m working on and what I plan to explore next.",
+    contactTitle: "Say hello", contact: "If you’d like to chat about accounting, tax, or something on this site, feel free to reach out.",
+  },
+  ko: {
+    labels: { home: "홈", about: "소개", interests: "관심사", projects: "프로젝트" },
+    hello: "안녕하세요, 박현준입니다. Peter라고 불러도 좋아요.",
+    intro: ["토론토의 York University에서 회계를 공부하고 있습니다. 특히 세무 분야에 관심이 있으며, 캐나다 CPA 자격 취득을 목표로 하고 있습니다.", "회계 밖에서는 10년 동안 해동검도를 수련해 왔습니다. 골프에도 관심이 있습니다."],
+    explore: "조금 더 알아보기",
+    summaries: { about: "회계를 선택한 이유와 공부하고 있는 내용, 가족 사업과 고객 서비스, 해군에서 맡았던 일을 소개합니다.", interests: "10년간의 해동검도 수련과 사범 자격, 그리고 골프에 대한 관심을 담았습니다.", projects: "지속적으로 관리하는 이 웹사이트와 계획 중인 현금흐름 학습 프로젝트입니다." },
+    descriptions: { about: "York University에서 회계를 공부하는 박현준의 세무에 대한 관심과 가족 사업, 고객 서비스, 해군 경험을 소개합니다.", interests: "박현준의 회계 밖 관심사: 10년간의 해동검도 수련, 4단과 사범 자격, 골프.", projects: "박현준이 관리하는 포트폴리오 웹사이트와 계획 중인 소규모 사업 현금흐름 및 GST/HST 학습 프로젝트." },
+    aboutTitle: "저를 소개합니다",
+    aboutIntro: ["기업에서 현금이 어떻게 흐르는지 이해하고 싶어 회계를 선택했습니다. 가족이 운영하는 델리에서는 현금 기록과 재고 확인이 일상의 업무였습니다. 회계를 공부하면서 사업의 이런 측면을 더 깊이 이해하고 싶습니다.", "특히 세무 분야에 관심이 있습니다. 현재 BCom 회계 전공 Co-op 과정에서 공부하고 있으며 캐나다 CPA 자격 취득을 목표로 합니다. 세무는 공부와 실무 경험을 통해 더 알아가고 싶은 분야입니다."],
+    experienceIntro: "이력서 한 장에 담기 어려운 업무의 맥락을 조금 더 소개합니다.",
+    stories: [
+      ["2025년 토론토 Paris Baguette 신규 매장의 오픈 팀으로 일했습니다. 현금·카드 결제를 처리하는 일과 함께 한국어를 사용하는 고객에게 제품을 설명했습니다.", "대부분의 동료가 한국어에 익숙하지 않았기 때문에 한국어와 영어를 오가며 고객과 직원의 소통을 돕는 일이 실제 업무의 한 부분이었습니다."],
+      ["대한민국 해군에서 복무하며 상황보고서를 관리하고 당직사관 검토를 위한 작전 브리핑 자료 준비를 도왔습니다. 이 기록과 자료는 해상 작전 중 지휘 계통의 보고를 뒷받침했습니다.", "미국 엔지니어들과의 함정 수리 과정에서 한영 통역을 제공했고 한불 연합작전에서도 통역 임무를 수행했습니다. 약 6개월 동안 생활반장으로서 동료 간 갈등 해결과 공동 업무 및 자원의 조정을 도왔습니다."],
+      ["제주시에서 가족이 운영하는 델리의 시재를 매일 전일 현금과 매장 기록에 대조했습니다. 숫자가 맞을 것이라고 가정하지 않고 차이나 기록 누락을 확인하는 일이었습니다.", "다른 지점 관리자들과 재고를 조정하여 품절 예방을 돕기도 했습니다. 매장 운영에 필요한 현금과 상품을 확인하는 일상적인 책임이었습니다.", "7일간의 가격 할인 행사를 제안하고 일일 특가를 공유하는 Naver Band 고객 그룹을 만들었습니다. 이러한 활동은 월간 POS 기록 매출이 전월보다 약 10% 증가하는 데 기여했습니다."],
+    ],
+    interestsTitle: "회계 밖의 일상", interestsIntro: "이력서에 꼭 담지 않아도 되는 제 삶의 한 부분입니다.",
+    kumdo: ["한국의 검술 무예인 해동검도를 10년 동안 수련했고, 4단과 사범 자격을 보유하고 있습니다.", "무림피아에 두 번 참가했으며 종이베기 금상을 비롯한 수상 경험이 있습니다. 팀 퍼포먼스도 기억에 남습니다. 함께 시범을 하면서 팀으로서 더 가까워지고 단합할 수 있었습니다.", "수련과 시범경연 때 지도를 맡기도 했습니다. 관장님이 자리를 비우면 전반적인 지도를 대신했습니다."],
+    golf: "골프", golfText: "골프 역시 개인적으로 관심을 두고 있는 운동입니다.", projectsIntro: "진행하고 있는 일과 앞으로 탐구하고 싶은 내용을 담았습니다.",
+    contactTitle: "편하게 연락해 주세요", contact: "회계, 세무 또는 이 사이트의 내용에 대해 이야기하고 싶으시면 편하게 연락해 주세요.",
+  },
+  ja: {
+    labels: { home: "ホーム", about: "自己紹介", interests: "趣味", projects: "プロジェクト" },
+    hello: "こんにちは、Hyeonjunです。Peterと呼んでいただいても大丈夫です。",
+    intro: ["トロントのYork Universityで会計を学んでいます。特に税務に関心があり、カナダのCPA資格取得を目指しています。", "会計以外では、Haedong Kumdoを10年間稽古してきました。ゴルフにも関心があります。"],
+    explore: "もう少し詳しく",
+    summaries: { about: "会計を選んだ理由、学んでいること、家族の事業・接客・海軍で担当した仕事について。", interests: "10年間のHaedong Kumdoの稽古、指導者資格、そしてゴルフへの関心。", projects: "更新を続けているこのサイトと、計画中のキャッシュフロー学習プロジェクト。" },
+    descriptions: { about: "York Universityで会計を学ぶHyeonjun Parkの税務への関心と、家族の事業・接客・海軍での経験。", interests: "Hyeonjun Parkの会計以外の関心事：10年間のHaedong Kumdo、4段と指導者資格、ゴルフ。", projects: "Hyeonjun Parkが継続更新するサイトと、計画中のキャッシュフロー・GST/HST学習プロジェクト。" },
+    aboutTitle: "自己紹介",
+    aboutIntro: ["企業の中で現金がどのように流れるのかを理解したくて、会計を選びました。家族経営のデリでは、現金の記録や在庫の確認が日々の仕事でした。会計の勉強を通じて、事業のそうした側面をより深く理解したいと思っています。", "特に税務に関心があります。現在はBCom会計専攻のCo-op課程で学び、カナダのCPA資格取得を目指しています。税務は、勉強と実務経験を通じてさらに探究したい分野です。"],
+    experienceIntro: "1枚の履歴書には収まりきらない、仕事の背景を少し紹介します。",
+    stories: [
+      ["2025年、トロントのParis Baguetteの新店舗オープンチームに加わりました。現金・カード決済を担当するほか、韓国語を話すお客様に商品を説明しました。", "ほとんどの同僚は韓国語に慣れていなかったため、韓国語と英語を使い分けてお客様とスタッフの意思疎通を手伝うことが、日常業務の一部でした。"],
+      ["大韓民国海軍での勤務中は、状況報告書を管理し、当直士官の確認用の作戦ブリーフィング資料作成を補助しました。これらの記録や資料は、海上作戦中の指揮系統への報告を支えていました。", "米国のエンジニアによる艦艇修理で韓英通訳を務め、韓仏共同作戦にも通訳として参加しました。また、約6か月間、居室の班長として、仲間同士の対立の解決や共同作業・資源の調整を手伝いました。"],
+      ["済州市にある家族経営のデリで、毎日レジの現金を前日の現金と店舗記録に照合しました。数字が合うと決めつけず、差異や記録漏れを見つけるための作業でした。", "他店舗のマネージャーと在庫を調整し、品切れの防止にも協力しました。店が必要とする現金と商品を把握する、日々の運営業務でした。", "7日間の値引きキャンペーンを提案し、日替わりの特売情報を共有するNaver Bandの顧客グループを作りました。これらの取り組みは、POSに記録された月間売上が前月比で約10%増加することに寄与しました。"],
+    ],
+    interestsTitle: "会計以外のこと", interestsIntro: "履歴書に収めなくてもよい、私の生活の一面です。",
+    kumdo: ["韓国の剣術武道であるHaedong Kumdoを10年間稽古し、4段と指導者資格を取得しています。", "Mulimpiaに2回出場し、紙切り種目の金賞を含む受賞経験があります。チームでの演武も印象に残っています。一緒に演武することで、仲間との一体感が生まれました。", "稽古や演武大会では指導も担当しました。館長が不在のときは、代わりに全般的な指導を行っていました。"],
+    golf: "ゴルフ", golfText: "ゴルフも個人的に関心を持っていることの一つです。", projectsIntro: "取り組んでいることと、これから探究したいこと。",
+    contactTitle: "お気軽にどうぞ", contact: "会計や税務、このサイトの内容について話してみたいことがあれば、お気軽にご連絡ください。",
+  },
+  zh: {
+    labels: { home: "首页", about: "关于我", interests: "兴趣", projects: "项目" },
+    hello: "你好，我是Hyeonjun，也可以叫我Peter。",
+    intro: ["我在多伦多的York University学习会计。我对税务尤其感兴趣，并计划考取加拿大CPA资格。", "会计之外，我练习Haedong Kumdo已有十年，也对高尔夫感兴趣。"],
+    explore: "多了解一点",
+    summaries: { about: "我为什么选择会计、正在学习什么，以及在家庭企业、客户服务和海军中做过的工作。", interests: "十年的Haedong Kumdo练习、教练资格，以及对高尔夫的兴趣。", projects: "我持续维护的这个网站，以及计划中的现金流学习项目。" },
+    descriptions: { about: "了解York University会计学生Hyeonjun Park对税务的兴趣，以及在家庭企业、客户服务和海军中的经历。", interests: "Hyeonjun Park在会计之外的兴趣：十年的Haedong Kumdo练习、4段和教练资格，以及高尔夫。", projects: "Hyeonjun Park持续维护的网站，以及计划中的现金流与GST/HST学习项目。" },
+    aboutTitle: "关于我",
+    aboutIntro: ["我选择会计，是因为想了解现金如何在企业中流动。在家人经营的熟食店里，现金记录和库存检查是日常工作的一部分。学习会计，让我能够更深入地理解企业的这一面。", "我对税务尤其感兴趣。目前我就读于BCom会计专业的Co-op项目，并计划考取加拿大CPA资格。税务是我希望通过学习和实践进一步探索的方向。"],
+    experienceIntro: "这里补充一些一页简历中难以展开的工作背景。",
+    stories: [
+      ["2025年，我加入了多伦多Paris Baguette新店的开业团队。除了处理现金和银行卡付款，我还向使用韩语的顾客介绍产品。", "大多数同事不太熟悉韩语，因此在韩语和英语之间切换、帮助顾客与团队沟通，是我日常工作的一部分。"],
+      ["在韩国海军服役期间，我维护情况报告，并协助准备供值班军官审核的作战简报材料。这些记录和材料支持海上行动中沿指挥链进行的汇报。", "我在美国工程师参与的舰艇维修中担任韩英口译，也在韩法联合行动中执行语言支持任务。我还担任了约六个月的宿舍班长，协助解决同伴间的矛盾，协调共同任务和资源。"],
+      ["在济州市家人经营的熟食店，我每天将收银现金与前一日现金及门店记录进行核对。这是为了发现差异和记录遗漏，而不是默认数字都能对上。", "我也与其他门店经理协调库存，协助预防缺货。这些都是日常运营职责：掌握门店所依赖的现金和商品情况。", "我提议开展为期七天的价格促销，并建立Naver Band顾客群，分享每日特价。这些举措为门店POS记录的月销售额较前一个月增长约10%作出了贡献。"],
+    ],
+    interestsTitle: "会计之外", interestsIntro: "这是我生活中不必装进简历的一部分。",
+    kumdo: ["我练习韩国剑术武道Haedong Kumdo已有十年，持有4段和教练资格。", "我参加过两次Mulimpia比赛，获得过包括斩纸项目金奖在内的奖项。团队演武也是其中一段经历：一起表演，让我们更加团结。", "我也协助带领训练，并在演武比赛中承担指导工作。馆长不在时，我会代为负责整体训练指导。"],
+    golf: "高尔夫", golfText: "高尔夫也是我的个人兴趣之一。", projectsIntro: "这里记录我正在做的事情，以及接下来计划探索的内容。",
+    contactTitle: "欢迎联系", contact: "如果你想聊聊会计、税务，或这个网站上的内容，欢迎随时联系。",
+  },
+};
