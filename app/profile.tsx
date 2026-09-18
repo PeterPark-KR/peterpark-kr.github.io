@@ -37,8 +37,7 @@ function About({ locale }: { locale: Locale }) {
     <section className="reading-section" id="education" aria-labelledby="education-title">
       <h2 id="education-title">{t.nav[2]}</h2><h3>York University</h3><p className="entry-role">{t.degree}</p>
       <p className="coursework-label">{t.selected}</p>
-      <dl className="detail-rows coursework">{["ADMS 3520", "ADMS 3370"].map((code, i) => <div key={code}><dt>{code}</dt><dd>{t.courses[i]} <span>{t.grade}</span></dd></div>)}</dl>
-      <p className="supporting-copy">{t.courseworkNote}</p>
+      <dl className="detail-rows coursework">{["ADMS 3520", "ADMS 3370"].map((code, i) => <div key={code}><dt>{code}</dt><dd>{t.courses[i]} <span>{t.grade}</span><p className="supporting-copy">{code === "ADMS 3370" ? c.excelCourse : c.taxCourse}</p></dd></div>)}</dl>
     </section>
     <section className="reading-section" id="skills" aria-labelledby="skills-title">
       <h2 id="skills-title">{t.skillsTitle}</h2>
@@ -65,6 +64,7 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
         <LanguageSelector locale={locale} page={page} label={t.language} />
       </MobileMenu>
     </header>
+    {page !== "home" && <div className="page-return shell"><a className="back-home" href={pagePath(locale)}><span aria-hidden="true">←</span> {c.backHome}</a></div>}
     <main id="main">
       {page === "home" ? <>
         <section className="profile-hero shell" id="journey" aria-labelledby="profile-name">
@@ -78,16 +78,20 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
         </section>
         <section className="home-topics shell" aria-labelledby="explore-title">
           <h2 id="explore-title">{c.explore}</h2>
-          <article className="topic-row" id="experience"><h3><a href={pagePath(locale, "about")}>{c.labels.about}</a></h3><p id="education"><span id="skills">{c.summaries.about}</span></p></article>
-          <article className="topic-row" id="beyond"><h3><a href={pagePath(locale, "interests")}>{c.labels.interests}</a></h3><p>{c.summaries.interests}</p></article>
-          <article className="topic-row" id="projects"><h3><a href={pagePath(locale, "projects")}>{c.labels.projects}</a></h3><p>{c.summaries.projects}</p></article>
+          {(["about", "interests", "projects"] as const).map(topic => <article className="topic-row" id={topic === "about" ? "experience" : topic === "interests" ? "beyond" : "projects"} key={topic}>
+            <h3>{c.labels[topic]}</h3>
+            <div className="topic-copy">
+              <p id={topic === "about" ? "education" : undefined}><span id={topic === "about" ? "skills" : undefined}>{c.summaries[topic]}</span></p>
+              <a className="topic-link" href={pagePath(locale, topic)}>{c.readMore[topic]}</a>
+            </div>
+          </article>)}
         </section>
       </> : <div className="reading-shell">
         {page === "about" && <About locale={locale} />}
         {page === "interests" && <>
           <header className="page-heading" id="beyond"><h1>{c.interestsTitle}</h1><p>{c.interestsIntro}</p></header>
-          <section className="reading-section" id="kumdo" aria-labelledby="kumdo-title"><h2 id="kumdo-title">{t.hobby}</h2><div className="prose">{c.kumdo.map(p => <p key={p}>{p}</p>)}</div></section>
-          <section className="reading-section" id="golf" aria-labelledby="golf-title"><h2 id="golf-title">{c.golf}</h2><p>{c.golfText}</p></section>
+          <section className="reading-section" id="kumdo" aria-labelledby="kumdo-title"><h2 id="kumdo-title">{t.hobby}</h2><div className="prose"><p>{c.kumdoOrigin}</p>{c.kumdo.map(p => <p key={p}>{p}</p>)}</div></section>
+          <section className="reading-section" id="golf" aria-labelledby="golf-title"><h2 id="golf-title">{c.golf}</h2><div className="prose">{c.golfText.map(p => <p key={p}>{p}</p>)}</div></section>
         </>}
         {page === "projects" && <>
           <header className="page-heading" id="projects"><h1>{c.labels.projects}</h1><p>{c.projectsIntro}</p></header>

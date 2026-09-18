@@ -59,10 +59,18 @@ h3 { font-size: 19px; font-weight: 500; line-height: 1.5; }
 .portrait img { object-fit: cover; }
 .home-topics { border-top: 1px solid var(--charcoal); padding-top: 32px; }
 .home-topics > h2 { margin-bottom: 10px; }
-.topic-row { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding-block: 24px; border-bottom: 1px solid var(--line); }
-.topic-row h3 a { display: inline-flex; min-height: 44px; align-items: center; }
+.topic-row { position: relative; display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding-block: 24px; border-bottom: 1px solid var(--line); }
+.topic-row:hover, .topic-row:focus-within { background: rgb(20 20 20 / 3%); }
+.topic-row:has(.topic-link:focus-visible) { outline: 2px solid var(--ink); outline-offset: 5px; }
+.topic-copy { min-width: 0; }
+.topic-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; font-size: 14px; font-weight: 500; text-decoration: underline; }
+.topic-link::after { content: ""; position: absolute; inset: 0; }
+.topic-row:hover .topic-link { text-decoration-thickness: 2px; }
 .topic-row p { align-self: center; max-width: 640px; font-size: 15px; }
-.reading-shell { width: min(760px, calc(100% - 96px)); margin: 52px auto 0; }
+.page-return { padding-top: 8px; }
+.reading-shell { width: min(760px, calc(100% - 96px)); margin: 24px auto 0; }
+.back-home { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 13px; color: var(--muted); }
+.back-home:hover { color: var(--ink); }
 .page-heading { padding-bottom: 36px; }
 .page-heading p { margin-top: 22px; max-width: 620px; color: var(--muted); }
 .reading-section { border-bottom: 1px solid var(--line); padding-block: 36px; }
@@ -129,7 +137,7 @@ dd { margin: 0; font-size: 15px; }
   .home-topics { padding-top: 26px; }
   .topic-row, .contact-layout { grid-template-columns: 1fr; gap: 6px; }
   .topic-row { padding-block: 18px; }
-  .reading-shell { margin-top: 36px; }
+  .reading-shell { margin-top: 20px; }
   .page-heading { padding-bottom: 24px; }
   .reading-section { padding-block: 28px; }
   .detail-rows > div { grid-template-columns: 1fr; gap: 5px; }
