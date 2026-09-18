@@ -1,7 +1,7 @@
-﻿import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { type Locale, localeInfo } from "./translations";
 
-export const pageNames = ["home", "about", "interests", "projects"] as const;
+export const pageNames = ["home", "about", "projects", "interests"] as const;
 export type PageName = typeof pageNames[number];
 export const locales = Object.keys(localeInfo) as Locale[];
 

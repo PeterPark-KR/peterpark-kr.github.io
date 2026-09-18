@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { profileConfig } from "./profile-config";
-import { dictionaries, pageCopy, type Locale } from "./translations";
+import { dictionaries, pageCopy, narrative, recognition, currentLearning, type Locale } from "./translations";
 import { pageNames, pagePath, type PageName } from "./locale";
 import { LanguageSelector, MobileMenu } from "./navigation";
 
@@ -21,34 +21,52 @@ function ContactLinks({ locale }: { locale: Locale }) {
 function About({ locale }: { locale: Locale }) {
   const t = dictionaries[locale];
   const c = pageCopy[locale];
+  const n = narrative[locale];
+  const awards = recognition[locale];
+  const learning = currentLearning[locale];
   return <>
     <section className="reading-section" id="journey" aria-labelledby="about-title">
       <h1 id="about-title">{c.aboutTitle}</h1>
-      <div className="prose">{c.aboutIntro.map(p => <p key={p}>{p}</p>)}</div>
+      <div className="prose">{n.opening.map(p => <p key={p}>{p}</p>)}</div>
     </section>
     <section className="reading-section" id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">{t.nav[1]}</h2><p className="section-note">{c.experienceIntro}</p>
-      {t.experience.map((item, i) => <article className="story" key={item.organization}>
+      <h2 id="experience-title">{n.experienceTitle}</h2><p className="section-note">{n.experienceIntro}</p>
+      {[2, 1, 0].map(i => { const item = t.experience[i]; return <article className="story" key={item.organization}>
         <p className="entry-date">{item.dates} · {item.location}</p>
-        <h3>{item.organization}</h3><p className="entry-role">{item.role}</p>
+        <h3>{n.chapters[i]}</h3><p className="entry-role">{item.organization} · {item.role}</p>
         <div className="prose">{c.stories[i].map(p => <p key={p}>{p}</p>)}</div>
-      </article>)}
+      </article>; })}
     </section>
     <section className="reading-section" id="education" aria-labelledby="education-title">
       <h2 id="education-title">{t.nav[2]}</h2><h3>York University</h3><p className="entry-role">{t.degree}</p>
       <p className="coursework-label">{t.selected}</p>
       <dl className="detail-rows coursework">{["ADMS 3520", "ADMS 3370"].map((code, i) => <div key={code}><dt>{code}</dt><dd>{t.courses[i]} <span>{t.grade}</span><p className="supporting-copy">{code === "ADMS 3370" ? c.excelCourse : c.taxCourse}</p></dd></div>)}</dl>
     </section>
+    <section className="reading-section" aria-labelledby="learning-title">
+      <h2 id="learning-title">{learning.title}</h2>
+      <p className="entry-date">Udemy · Mike X Cohen · {learning.status}</p>
+      <h3><a href="https://www.udemy.com/course/deeplearning_x/" target="_blank" rel="noopener noreferrer">A deep understanding of deep learning (with Python intro)</a></h3>
+      <p className="supporting-copy">{learning.text}</p>
+    </section>
+    <section className="reading-section" id="recognition" aria-labelledby="recognition-title">
+      <h2 id="recognition-title">{awards.title}</h2>
+      <dl className="detail-rows">
+        <div><dt>{awards.scholarships}</dt><dd>International Scholarship of Merit; YU Automatic Entrance Scholarship (2020)</dd></div>
+        <div><dt>{awards.service}</dt><dd>{awards.commendation}</dd></div>
+      </dl>
+    </section>
     <section className="reading-section" id="skills" aria-labelledby="skills-title">
       <h2 id="skills-title">{t.skillsTitle}</h2>
       <dl className="detail-rows">{t.skills.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
     </section>
+    <section className="reading-section" aria-labelledby="contribution-title"><h2 id="contribution-title">{n.contributionTitle}</h2><p>{n.contribution}</p></section>
   </>;
 }
 
 export default function Profile({ locale, page = "home" }: { locale: Locale; page?: PageName }) {
   const t = dictionaries[locale];
   const c = pageCopy[locale];
+  const n = narrative[locale];
   const portrait = profileConfig.portrait;
   const navLinks = pageNames.map(key => <a key={key} href={pagePath(locale, key)} aria-current={page === key ? "page" : undefined}>{c.labels[key]}</a>);
   return <div id="top">
@@ -71,17 +89,17 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
           <div className="profile-intro">
             <p className="eyebrow">{t.location}</p><h1 id="profile-name">{t.name}</h1>
             <p className="hello">{c.hello}</p>
-            <div className="home-intro">{c.intro.map(p => <p key={p}>{p}</p>)}</div>
+            <div className="home-intro">{n.home.map(p => <p key={p}>{p}</p>)}</div>
             <ContactLinks locale={locale} />
           </div>
           {portrait && <div className="portrait has-image"><Image src={portrait.src} alt={locale === "en" ? portrait.alt : t.name} fill sizes="(max-width: 700px) 180px, (max-width: 1050px) 240px, 280px" /></div>}
         </section>
         <section className="home-topics shell" aria-labelledby="explore-title">
           <h2 id="explore-title">{c.explore}</h2>
-          {(["about", "interests", "projects"] as const).map(topic => <article className="topic-row" id={topic === "about" ? "experience" : topic === "interests" ? "beyond" : "projects"} key={topic}>
+          {(["about", "projects", "interests"] as const).map(topic => <article className="topic-row" id={topic === "about" ? "experience" : topic === "interests" ? "beyond" : "projects"} key={topic}>
             <h3>{c.labels[topic]}</h3>
             <div className="topic-copy">
-              <p id={topic === "about" ? "education" : undefined}><span id={topic === "about" ? "skills" : undefined}>{c.summaries[topic]}</span></p>
+              <p id={topic === "about" ? "education" : undefined}><span id={topic === "about" ? "skills" : undefined}>{topic === "about" ? n.aboutSummary : c.summaries[topic]}</span></p>
               <a className="topic-link" href={pagePath(locale, topic)}>{c.readMore[topic]}</a>
             </div>
           </article>)}
@@ -94,7 +112,7 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
           <section className="reading-section" id="golf" aria-labelledby="golf-title"><h2 id="golf-title">{c.golf}</h2><div className="prose">{c.golfText.map(p => <p key={p}>{p}</p>)}</div></section>
         </>}
         {page === "projects" && <>
-          <header className="page-heading" id="projects"><h1>{c.labels.projects}</h1><p>{c.projectsIntro}</p></header>
+          <header className="page-heading" id="projects"><h1>{c.labels.projects}</h1><p>{n.projectsIntro}</p></header>
           {t.projects.map((project, i) => <section className="reading-section project-entry" key={project.title} aria-labelledby={`project-${i}`}><p className="entry-date">{project.status}</p><h2 id={`project-${i}`}>{project.title}</h2><p>{project.description}</p>{project.tools && <p className="supporting-copy">{project.tools}</p>}</section>)}
         </>}
       </div>}
