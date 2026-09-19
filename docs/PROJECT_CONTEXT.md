@@ -225,3 +225,29 @@ This entry supersedes the earlier single-language source-map and design notes. T
 - Header/skills refinement: changed Accounting portfolio to My journey toward becoming a CPA, and contribution heading to What I would bring to your team (rendered with contraction), with equivalent translations. Replaced Business operations with Cash handling & reconciliation and a short first-person description of verified cash/record checks, payment processing and stock coordination. Checked terminology against Government of Canada Job Bank cashier duties (https://www.jobbank.gc.ca/marketreport/occupation/24164/ON); source supports terminology only, not candidate experience. No bank reconciliation, bookkeeping or professional accounting claims added. Local-only follow-up; no publication authorized for this edit.
 
 - User authorized publishing the header, cash-handling skills and your-team heading refinement. Reviewed release scope: app/translations.ts and this context only. Remote main matched bc4c4ab. Final production build/TypeScript, lint and whitespace checks passed. Existing routes, styling, resume, verification assets and deployment configuration remain unchanged. Deployment and live checks follow push; visual mobile verification remains unavailable.
+
+## Contact colour preview - 2026-09-18
+
+- User requested a restrained contact-only colour treatment and corrected reference scope to individual professionals rather than company sites. Reviewed personal attorney sites Corey K. Ferguson (https://ckferguson.com/contact-us) and John Bandler (https://johnbandler.com/), plus individual-led CPA Holly Signorelli (https://www.hollysignorelli.com/). Their readable text supports direct personal contact presentation; no visual colour benchmark was established because browser inventory was empty. Do not attribute the chosen palette to these sites.
+- Local design proposal: contact section background #e5ece8, border #cbd8d0, existing charcoal text and unchanged single-column alignment, copy and links. Sage tint is an original choice to separate the contact area from off-white pages. Calculated contrast is 15.35:1 for headings and 12.12:1 for body text. Production build/TypeScript passed. Not committed or published; browser visual verification unavailable. Preview: http://127.0.0.1:3100/#contact.
+
+- 2026-09-19 colour feedback: replaced the provisional sage contact background with neutral light grey #f1f1f1 and softened its border to #e7e7e7. Reduced section-to-page contrast while retaining dark readable text, existing layout and wording. Local preview only; not published.
+
+
+## UI and usability refinement - 2026-09-19
+
+- User requested implementation against first-impression, typography, spacing, contrast, mobile, navigation, CTA, storytelling and performance criteria, retaining a human personal style. Initial working tree contained the contact-grey CSS change and its context notes; preserved both.
+- Added a localized accounting co-op / tax-interest line immediately below the name; retained the personal greeting and family-business story. Made existing LinkedIn/email links outlined/filled actions on the homepage, preserving their ordering and the prior explicit removal of visible resume links. Added Contact to desktop/mobile navigation and an About section index.
+- Retained the restrained Georgia/Geist typography, off-white/charcoal palette and grey contact block. Increased language targets to 44px and switch to mobile navigation at 1050px to accommodate the extra link. No new animations or dependencies.
+- Projects now separate motivation, approach and current state in all four languages. Website status describes the existing four-language site; tracker remains explicitly planned with no completed tool or tested outcome claimed. Added typed UI copy in app/ui-copy.ts.
+- Removed unused Geist Mono loading and marked the existing hero image eager/high priority. Original portrait bytes and framing remain intact. This changes loading behavior; no measured loading-time or Core Web Vitals improvement is claimed.
+- Validation: lint and production build/TypeScript/static export passed; checked all 16 routes for unique IDs, one H1, valid internal links/fragments, image assets, localized additions and preserved resume/portrait/verification bytes. Calculated contrast: muted text on paper 5.35:1; primary CTA 13.56:1. Preview HTTP 200 at http://127.0.0.1:3100/. Final responsive CSS rebuild passed; all 16 HTTP-served routes returned 200 and the exported CSS includes the final navigation breakpoint.
+- Browser inventory returned no connected browsers or apps, so actual desktop/mobile appearance, keyboard/touch interaction and loading speed remain unverified. External account/course link availability was not reverified; destinations were preserved. Browser review should cover 320/390/768/1050/1440px and all four languages. Build initially hit font-network restrictions, then a generated-cache lock; network-enabled build after verified .next cleanup succeeded.
+- Local edits only; no commit, push or deployment. Hosting, domain, SEO metadata, PDF, portrait and Search Console assets remain unchanged. Use /about/ and /projects/ plus matching /ko/, /ja/ and /zh/ routes for review.
+
+
+## UI refinement publication - 2026-09-19
+
+- User explicitly authorized publishing the current local revision, including the neutral contact background. Release scope: app/[[...locale]]/layout.tsx, app/globals.css, app/profile.tsx, app/ui-copy.ts and this context. This supersedes local-only status for these changes.
+- Reviewed the complete source diff; prior final-source lint, production build/TypeScript, 16-route HTTP and internal-link checks passed in this session. No website source changes since validation. Preserved domain, deployment, metadata, portrait, resume and verification assets.
+- Deployment and live checks follow the release push. Browser visual/mobile interaction checks remain unavailable.

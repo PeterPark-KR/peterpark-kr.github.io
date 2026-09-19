@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { uiCopy } from "./ui-copy";
 import { profileConfig } from "./profile-config";
 import { dictionaries, pageCopy, narrative, recognition, currentLearning, type Locale } from "./translations";
 import { pageNames, pagePath, type PageName } from "./locale";
@@ -27,6 +28,9 @@ function About({ locale }: { locale: Locale }) {
   return <>
     <section className="reading-section" id="journey" aria-labelledby="about-title">
       <h1 id="about-title">{c.aboutTitle}</h1>
+      <nav className="page-index" aria-label={uiCopy[locale].onThisPage}>
+        <a href="#experience">{t.nav[1]}</a><a href="#education">{t.nav[2]}</a><a href="#recognition">{awards.title}</a><a href="#skills">{t.nav[3]}</a>
+      </nav>
       <div className="prose">{n.opening.map(p => <p key={p}>{p}</p>)}</div>
     </section>
     <section className="reading-section" id="experience" aria-labelledby="experience-title">
@@ -68,7 +72,9 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
   const c = pageCopy[locale];
   const n = narrative[locale];
   const portrait = profileConfig.portrait;
+  const ui = uiCopy[locale];
   const navLinks = pageNames.map(key => <a key={key} href={pagePath(locale, key)} aria-current={page === key ? "page" : undefined}>{c.labels[key]}</a>);
+  navLinks.push(<a key="contact" href="#contact">{t.nav[5]}</a>);
   return <div id="top">
     <a className="skip-link" href="#main">{t.skip}</a>
     <header className="site-header shell">
@@ -88,11 +94,12 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
         <section className="profile-hero shell" id="journey" aria-labelledby="profile-name">
           <div className="profile-intro">
             <p className="eyebrow">{t.location}</p><h1 id="profile-name">{t.name}</h1>
+            <p className="profile-role">{ui.role}</p>
             <p className="hello">{c.hello}</p>
             <div className="home-intro">{n.home.map(p => <p key={p}>{p}</p>)}</div>
             <ContactLinks locale={locale} />
           </div>
-          {portrait && <div className="portrait has-image"><Image src={portrait.src} alt={locale === "en" ? portrait.alt : t.name} fill sizes="(max-width: 700px) 180px, (max-width: 1050px) 240px, 280px" /></div>}
+          {portrait && <div className="portrait has-image"><Image src={portrait.src} alt={locale === "en" ? portrait.alt : t.name} fill loading="eager" fetchPriority="high" sizes="(max-width: 700px) 180px, (max-width: 1050px) 240px, 280px" /></div>}
         </section>
         <section className="home-topics shell" aria-labelledby="explore-title">
           <h2 id="explore-title">{c.explore}</h2>
@@ -113,7 +120,7 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
         </>}
         {page === "projects" && <>
           <header className="page-heading" id="projects"><h1>{c.labels.projects}</h1><p>{n.projectsIntro}</p></header>
-          {t.projects.map((project, i) => <section className="reading-section project-entry" key={project.title} aria-labelledby={`project-${i}`}><p className="entry-date">{project.status}</p><h2 id={`project-${i}`}>{project.title}</h2><p>{project.description}</p>{project.tools && <p className="supporting-copy">{project.tools}</p>}</section>)}
+          {t.projects.map((project, i) => <section className="reading-section project-entry" key={project.title} aria-labelledby={`project-${i}`}><p className="entry-date">{project.status}</p><h2 id={`project-${i}`}>{project.title}</h2><dl className="project-story"><div><dt>{ui.purpose}</dt><dd>{ui.projects[i].purpose}</dd></div><div><dt>{ui.approach}</dt><dd>{project.description}</dd></div><div><dt>{ui.status}</dt><dd>{ui.projects[i].status}</dd></div></dl>{project.tools && <p className="supporting-copy">{project.tools}</p>}</section>)}
         </>}
       </div>}
       <section className="contact-section" id="contact" aria-labelledby="contact-title"><div className="shell contact-layout">

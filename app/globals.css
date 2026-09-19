@@ -11,7 +11,6 @@
   --color-background: var(--paper);
   --color-foreground: var(--ink);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -38,7 +37,7 @@ section, main, [id] { scroll-margin-top: 28px; }
 .desktop-nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
 .desktop-nav a:hover, .desktop-nav a[aria-current="page"] { text-decoration: underline; }
 .language-selector { display: flex; gap: 2px; }
-.language-selector a { font-size: 11px; min-width: 34px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.language-selector a { font-size: 11px; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 .language-selector a[aria-current="page"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; }
 .language-selector a:hover { text-decoration: underline; }
 .mobile-menu { display: none; }
@@ -94,7 +93,7 @@ dd { margin: 0; font-size: 15px; }
 .coursework dd span { display: block; color: var(--muted); font-size: 12px; }
 .supporting-copy { font-size: 13px; color: var(--muted); margin-top: 16px; }
 .project-entry h2 { font-size: 25px; }
-.contact-section { margin-top: 48px; padding-block: 36px; border-block: 1px solid var(--line); }
+.contact-section { margin-top: 48px; padding-block: 36px; background: #f1f1f1; border-block: 1px solid #e7e7e7; }
 .contact-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
 .contact-layout > div { min-width: 0; max-width: 620px; }
 .contact-section .profile-links { margin-top: 12px; }
@@ -109,7 +108,7 @@ dd { margin: 0; font-size: 15px; }
   .desktop-navigation { gap: 18px; }
   .desktop-nav { gap: 16px; }
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .desktop-navigation { display: none; }
   .mobile-menu { display: block; position: relative; }
   .mobile-menu summary { display: flex; gap: 20px; align-items: center; cursor: pointer; list-style: none; min-height: 44px; font-size: 14px; }
@@ -126,7 +125,7 @@ dd { margin: 0; font-size: 15px; }
   .shell, .reading-shell { width: calc(100% - 40px); }
   .site-header { min-height: 88px; gap: 16px; }
   .brand { font-size: 16px; }
-  .brand span { font-size: 9px; }
+  .brand span { font-size: 10px; letter-spacing: .5px; }
   .profile-hero { grid-template-columns: 1fr; gap: 28px; padding-block: 36px; }
   h1 { font-size: clamp(36px, 9vw, 52px); letter-spacing: -1px; }
   h2 { font-size: 25px; }
@@ -148,4 +147,28 @@ dd { margin: 0; font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* Small editorial details keep the profile easy to scan without adding decoration. */
+.profile-role { margin-top: 16px; font-size: 15px; font-weight: 600; line-height: 1.6; }
+.profile-intro .profile-links a { padding: 8px 16px; border: 1px solid var(--charcoal); text-decoration: none; }
+.profile-intro .profile-links a:first-child { background: var(--charcoal); color: var(--paper); }
+.profile-intro .profile-links a:hover { background: var(--ink); color: var(--paper); }
+.page-index { display: flex; flex-wrap: wrap; gap: 4px 24px; margin: -8px 0 24px; padding-block: 8px; border-block: 1px solid var(--line); }
+.page-index a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+.project-story { margin: 0; display: grid; gap: 22px; }
+.project-story dt { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.project-story dd { font-size: 16px; max-width: 65ch; }
+.mobile-menu summary { min-width: 64px; }
+@media (min-width: 1051px) and (max-width: 1180px) {
+  .desktop-navigation { gap: 12px; }
+  .desktop-nav { gap: 12px; }
+  .brand { max-width: 220px; }
+}
+@media (max-width: 700px) {
+  .brand { min-width: 0; }
+  .mobile-menu { flex-shrink: 0; }
+  .profile-role { font-size: 14px; }
+  .profile-intro .profile-links { gap: 12px; }
+  .page-index { gap: 4px 20px; }
 }

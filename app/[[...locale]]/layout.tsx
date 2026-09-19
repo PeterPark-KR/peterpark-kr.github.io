@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "../globals.css";
 import { siteConfig } from "../site-config";
 import { dictionaries, localeInfo, pageCopy } from "../translations";
 import { resolveRoute, pagePath, locales } from "../locale";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 type Params = Promise<{ locale?: string[] }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -30,5 +29,5 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode; params: Params }) {
   const { locale } = resolveRoute((await params).locale);
-  return <html lang={localeInfo[locale].lang}><body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body></html>;
+  return <html lang={localeInfo[locale].lang}><body className={`${geistSans.variable} antialiased`}>{children}</body></html>;
 }
