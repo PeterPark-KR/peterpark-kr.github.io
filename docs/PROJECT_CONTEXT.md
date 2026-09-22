@@ -251,3 +251,12 @@ This entry supersedes the earlier single-language source-map and design notes. T
 - User explicitly authorized publishing the current local revision, including the neutral contact background. Release scope: app/[[...locale]]/layout.tsx, app/globals.css, app/profile.tsx, app/ui-copy.ts and this context. This supersedes local-only status for these changes.
 - Reviewed the complete source diff; prior final-source lint, production build/TypeScript, 16-route HTTP and internal-link checks passed in this session. No website source changes since validation. Preserved domain, deployment, metadata, portrait, resume and verification assets.
 - Deployment and live checks follow the release push. Browser visual/mobile interaction checks remain unavailable.
+
+## HP favicon replacement - 2026-09-22
+
+- Replaced the blue starter favicon with the user-supplied HP logo, trimming surrounding whitespace and producing 16/32/48/256px ICO, 48px PNG and 180px Apple touch icon assets. The legacy SVG URL also contains the supplied logo. Shared metadata uses the new HP filenames across locales.
+- Production build/TypeScript passed; all 16 exported pages reference the new icons and exported assets match source bytes. Inspected the generated logo image. Browser tab rendering remains unverified. Existing unrelated CSS, navigation, profile and context edits were preserved. Local only; no commit, push or publication.
+
+## HP favicon publication - 2026-09-22
+
+- User reviewed the local preview and explicitly authorized publication. Release scope is the shared icon metadata, ICO/SVG/PNG icon assets and favicon-specific context notes. Existing unrelated local changes are excluded. Lint, production build/TypeScript and all 16 exported-page icon checks passed. Deployment and live asset verification follow the release push.

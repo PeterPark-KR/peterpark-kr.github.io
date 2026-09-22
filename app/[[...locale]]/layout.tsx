@@ -23,7 +23,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     alternates: { canonical: path, languages: { ...languages, "x-default": pagePath("en", page) } },
     openGraph: { type: "website", locale: info.og, alternateLocale: Object.values(localeInfo).filter(item => item !== info).map(item => item.og), url: path, siteName: siteConfig.name, title, description },
     twitter: { card: "summary", title, description },
-    robots: { index: true, follow: true }, icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+    robots: { index: true, follow: true },
+    icons: {
+      icon: { url: "/favicon-hp.png", type: "image/png", sizes: "48x48" },
+      shortcut: "/favicon-hp.png",
+      apple: { url: "/apple-touch-icon-hp.png", sizes: "180x180" },
+    },
   };
 }
 
