@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { uiCopy } from "./ui-copy";
+import { ledgerCopy } from "./ledger-copy";
 import { profileConfig } from "./profile-config";
 import { dictionaries, pageCopy, narrative, recognition, currentLearning, type Locale } from "./translations";
 import { pageNames, pagePath, type PageName } from "./locale";
@@ -73,6 +74,7 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
   const n = narrative[locale];
   const portrait = profileConfig.portrait;
   const ui = uiCopy[locale];
+  const ledger = ledgerCopy[locale];
   const navLinks = pageNames.map(key => <a key={key} href={pagePath(locale, key)} aria-current={page === key ? "page" : undefined}>{c.labels[key]}</a>);
   navLinks.push(<a key="contact" href="#contact">{t.nav[5]}</a>);
   return <div id="top">
@@ -120,6 +122,12 @@ export default function Profile({ locale, page = "home" }: { locale: Locale; pag
         </>}
         {page === "projects" && <>
           <header className="page-heading" id="projects"><h1>{c.labels.projects}</h1><p>{n.projectsIntro}</p></header>
+          <section className="reading-section project-entry" id="personal-ledger" aria-labelledby="ledger-title">
+            <p className="entry-date">{ledger.status}</p>
+            <h2 id="ledger-title">{ledger.title}</h2>
+            <dl className="project-story">{ledger.rows.map(row => <div key={row.label}><dt>{row.label}</dt><dd>{row.text}</dd></div>)}</dl>
+            <p className="supporting-copy">{ledger.tools}</p>
+          </section>
           {t.projects.map((project, i) => <section className="reading-section project-entry" key={project.title} aria-labelledby={`project-${i}`}><p className="entry-date">{project.status}</p><h2 id={`project-${i}`}>{project.title}</h2><dl className="project-story"><div><dt>{ui.purpose}</dt><dd>{ui.projects[i].purpose}</dd></div><div><dt>{ui.approach}</dt><dd>{project.description}</dd></div><div><dt>{ui.status}</dt><dd>{ui.projects[i].status}</dd></div></dl>{project.tools && <p className="supporting-copy">{project.tools}</p>}</section>)}
         </>}
       </div>}
